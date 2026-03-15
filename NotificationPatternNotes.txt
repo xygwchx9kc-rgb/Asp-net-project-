@@ -1,0 +1,5 @@
+I would choose an asynchronous integration pattern for a future NotificationService.
+
+When a task is completed, the Task Service should remain focused on changing task state and should not wait for email delivery to finish. Publishing a "TaskCompleted" event to a message broker such as RabbitMQ keeps the API responsive, reduces coupling, and makes retries easier if the email provider is temporarily unavailable.
+
+HTTP/REST would be acceptable for simple synchronous integration, but it would tightly couple task completion to notification availability. For this scenario, RabbitMQ plus a separate NotificationService consumer is the safer and more scalable choice.

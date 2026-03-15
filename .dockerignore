@@ -1,0 +1,8 @@
+bin/
+obj/
+.git/
+.gitignore
+.DS_Store
+.dotnet-cli/
+README.md
+NotificationPatternNotes.txt
